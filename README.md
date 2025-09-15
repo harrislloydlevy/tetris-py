@@ -1,2 +1,2 @@
 # tetris-py
-a terminal tetris game written in Python 2 with curses lib
+Teaching PyTorch to play tetris (Thanks Charles for the teris code!)
