@@ -48,7 +48,6 @@ class PyTetris:
         return True
 
     def play_step(self):
-        while not self.game_over:
             dx, rotate = 0, False
             self.sc.fill((0, 0, 0))
             self.sc.blit(self.game_sc, (20, 20))
@@ -156,4 +155,5 @@ class PyTetris:
 if __name__ == "__main__":
     tetris = PyTetris()
 
-    tetris.play_step()
+    while not tetris.game_over:
+      tetris.play_step()
