@@ -32,6 +32,9 @@ class PyTetris:
         self.sc = pygame.display.set_mode(RES)
         self.game_sc = pygame.Surface(GAME_RES)
         self.clock = pygame.time.Clock()
+        self.reset()
+
+    def reset(self):
         self.figures_rect = pygame.Rect(0, 0, TILE - 2, TILE - 2)
         self.field = [[0 for i in range(W)] for j in range(H)]
         self.anim_count, self.anim_speed, self.anim_limit = 0, 60, 2000
@@ -39,6 +42,7 @@ class PyTetris:
         self.color, self.next_color = get_color(), get_color()
         self.score, self.lines = 0, 0
         self.game_over = False
+        self.clock.tick()
 
     def check_borders(self, i):
         if self.figures[i].x < 0 or self.figures[i].x > W - 1:
